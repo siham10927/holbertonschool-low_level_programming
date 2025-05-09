@@ -1,12 +1,18 @@
 #include "main.h"
 
 /**
- * main - check the code for Holberton School students.
+ * _puts_recursion - prints a string follow by a new line. recursively.
+ * @s: string in which to print.
  *
- * Return: Always 0.
+ * Return: Nothing
  */
-int main(void)
+void _puts_recursion(char *s)
 {
-    _puts_recursion("Betty Holberton");
-    return (0);
-}
+	if (!*s)
+	{
+		_putchar('\n');
+		return;
+	}
+	_putchar(*s);
+	_puts_recursion((s + 1));
+
