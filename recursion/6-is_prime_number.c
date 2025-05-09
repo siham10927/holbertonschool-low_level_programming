@@ -1,34 +1,35 @@
 #include "main.h"
-
-int prime_number(int n, int i);
+int calculo_primo(int num_, int inf);
 
 /**
- * is_prime_number - fuction the check if a number is a prime.
- * @n: number to be tested.
+ * is_prime_number - function that  returns 1 if the input integer is a prime.
+ *@n: first value
  *
- * Return: 1 if a Prime else 0
+ * Return: Return solution
  */
 int is_prime_number(int n)
 {
-	if (n <= 1)
+	int a = 2;
+
+	if (n == 1)
 		return (0);
-	return (prime_number(n, n - 1));
+	if (n < 0)
+		return (0);
+	return (calculo_primo(n, a));
 }
 
 /**
- * prime_number - help fuction function for is_prime_number.
- * @n: Original number to be tested.
- * @i: Original number to test with.
+ * calculo_primo - function that returns 1 if the input integer is a prime.
+ *@num_: first value
+ *@inf: second value
  *
- * Return: 1 if a Prime else 0
+ * Return: Return solution
  */
-int prime_number(int n, int i)
+int calculo_primo(int num_, int inf)
 {
-	if (i == 1)
+	if (num_ / 2 < inf)
 		return (1);
-	else if (n % i == 0)
+	if (num_ % inf == 0)
 		return (0);
-	else if (n % i != 0)
-		return (prime_number(n, i - 1));
-	return (0);
-
+	return (calculo_primo(num_, inf + 1));
+}
