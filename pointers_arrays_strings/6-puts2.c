@@ -1,22 +1,24 @@
-#include "main.h"
+ #include "main.h"
 
 /**
- * puts2 -  prints a string
+ * puts2 - Write a function that prints every other character of a string, 
+ *         starting with the first character, followed by a new line.
  *
- * @str: arg *str
+ * @s: This pointer point to a char or string
  *
- * Return: string to stdout
+ *
  */
 
-void puts2(char *str)
+void puts2(char *s)
 {
-	int i;
+	int a;
 
-	while (str[i] != '\0')
+	for (a = 0; s[a] != '\0'; a++)
 	{
-		if (i % 2 == 0)
-			_putchar(str[i]);
-		i++;
+		if (a % 2 == 0)
+		{
+			_putchar(s[a]);
+		}
 	}
 	_putchar('\n');
 }
